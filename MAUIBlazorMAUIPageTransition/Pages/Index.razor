@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<h1>Index</h1>
+
+<button class="btn btn-secondary" @onclick="NavigateToCounterPage">MAUI navigation Counter</button>
+
+@code {
+    async void NavigateToCounterPage()
+    {
+        await App.Current.MainPage.Navigation.PushModalAsync(new CounterPage());
+    }
+}
+

@@ -1,0 +1,12 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<button class="btn btn-secondary" @onclick="NavigatetoMainPage">MAUI navigation Main Page</button>
+
+@code {
+    async void NavigatetoMainPage()
+    {
+        await App.Current.MainPage.Navigation.PushModalAsync(new MainPage());
+    }
+}
