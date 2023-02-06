@@ -2,10 +2,13 @@
 
 public partial class App : Application
 {
-	public App()
+    public static IServiceProvider Services;
+	public App(IServiceProvider provider)
 	{
-		InitializeComponent();
+        InitializeComponent();
+        Services = provider;
+        MainPage = new NavigationPage(new MainPage());
+    }
 
-		MainPage = new MainPage();
-	}
+
 }
